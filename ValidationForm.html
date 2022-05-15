@@ -1,0 +1,77 @@
+<html>
+<head>
+  <script>
+    function validate(){
+        var name = document.getElementById("name");
+        var password = document.getElementById("pwd");
+        
+
+        if(name.value == "" || password.value =="")
+        {
+          alert("values cannot be blank");
+        }
+        else
+        {
+          
+        }
+        if(isNaN(document.form1.po.value))
+        {
+          alert("Purchase order should be numeric value");         
+        }
+        if ((!document.form1.post[0].checked) &&  (!document.form1.post[1].checked))
+        {
+          alert("please select delivery method");
+        }
+        if(document.form1.pay.selectedIndex==0)
+	          {
+              alert("Please select a payment method");	           
+            }
+	      if(!document.form1.condition.checked)
+	          {
+              alert("please check Terms and Conditions");
+	            
+	          }
+
+          }
+
+      
+  </script>
+</head>
+<body>
+
+<form action="action_page.php" name = "form1" >
+
+Customer Name : <input type = "text"  name = "name" id = "name"> <br> <br>
+
+Password: <input type = "password" name = "pwd" id = "pwd" > <br> <br>
+
+Purchase Order: <input type = "text" name = "po" id = "po" > <br> <br>
+
+Delivery Method : 
+
+<input type="radio" id="ordinary" name ="post"> Ordinary Post
+<input type="radio" id="registered" name = "post"> Registered Post
+
+<br> <br>
+
+Payment Method: 
+
+<select id = "pay">
+  <option value="0">-select-</option>
+  <option value="1">card</option>
+  <option value="2">online</option>
+  <option value="3">cash</option>
+</select>
+
+<br> <br>
+
+Terms and Conditions: <input type = "checkbox" name="condition" id ="terms"> <br> <br>
+
+
+<button onclick="validate()">submit</button>
+
+</form>
+
+</body>
+
+</head>
